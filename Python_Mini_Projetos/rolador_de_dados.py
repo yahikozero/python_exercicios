@@ -17,24 +17,39 @@ while True:
   for opcao, faces in dados.items():
     print(f"{opcao} - Rolar um d{faces}")
   print("9 - Sair")
-
-  opcao = int(input("Escolha uma opção: "))
   
+  try:
+      opcao = int(input("Escolha uma opção: "))
+  except ValueError:
+      print("Opção inválida!")
+      continue
+   
   if (opcao == 9):
     break
 
-  if (opcao not in dados):
+  if (opcao not in dados and opcao):
     print("Opção inválida!")
     continue
-  
+
   faces = dados[opcao]
 
-  quantidade = int(input("Quantos dados deseja rolar? "))
+  try:
+    quantidade = int(input("Quantos dados deseja rolar? "))
+  except ValueError:
+    print("Quantidade inválida!")
+    continue
+
+  rolagens = []
+  rolagens_txt = ""
+
   total = 0
 
   for i in range(quantidade):
     resultado = random.randint(1, faces)
-    print(f"d{faces} rolado: {resultado}")
+    rolagens.append(resultado)
+    if i > 0:
+      rolagens_txt += ", " 
     total += resultado
+    rolagens_txt += str(rolagens[i])
 
-  print(f"Você rolou {quantidade}d{faces} resultando em: {total}")
+  print(f"Você rolou {quantidade}d{faces} resultando em: {rolagens_txt}, para um total de {total}.")
