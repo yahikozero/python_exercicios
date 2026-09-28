@@ -19,15 +19,22 @@ while True:
   print("9 - Sair")
 
   opcao = int(input("Escolha uma opção: "))
-
+  
   if (opcao == 9):
     break
 
   if (opcao not in dados):
     print("Opção inválida!")
     continue
-
+  
   faces = dados[opcao]
-  resultado = random.randint(1, faces)
 
-  print(f"Rolou um d{faces}, resultado: {resultado}")
+  quantidade = int(input("Quantos dados deseja rolar? "))
+  total = 0
+
+  for i in range(quantidade):
+    resultado = random.randint(1, faces)
+    print(f"d{faces} rolado: {resultado}")
+    total += resultado
+
+  print(f"Você rolou {quantidade}d{faces} resultando em: {total}")
