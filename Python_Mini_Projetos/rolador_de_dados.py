@@ -11,8 +11,6 @@ dados = {
     8: 100
 }
 
-print("9 - Sair")
-
 while True:
   print("\n===ROLADOR DE DADOS===")
 
