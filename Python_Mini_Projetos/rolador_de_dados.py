@@ -27,7 +27,7 @@ while True:
   if (opcao == 9):
     break
 
-  if (opcao not in dados and opcao):
+  if (opcao not in dados):
     print("Opção inválida!")
     continue
 
