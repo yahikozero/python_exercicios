@@ -19,10 +19,10 @@ while True:
   print("9 - Sair")
   
   try:
-      opcao = int(input("Escolha uma opção: "))
+    opcao = int(input("Escolha uma opção: "))
   except ValueError:
-      print("Opção inválida!")
-      continue
+    print("Opção inválida!")
+    continue
    
   if (opcao == 9):
     break
