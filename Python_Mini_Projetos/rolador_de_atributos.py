@@ -27,7 +27,7 @@ for i in range (6):
         atributo_final.append(3)
     else:
         atributo_final.append(4)
-print(f"Atributos Iniciais: {atributo_final}")    
+print(f"Rolagens Iniciais: {rol_soma}\n Atributos Iniciais: {atributo_final}")    
 #rerolagem de atributo se soma menor que 6
 while True:
     menor_atributo = min(atributo_final)
@@ -44,7 +44,7 @@ while True:
             resultado_reroll.append(reroll)
         menor_reroll = min(resultado_reroll)
         soma_reroll = sum(resultado_reroll) - menor_reroll
-
+    
     if (soma_reroll <= 7):
         atributo_final[posicao] = -2    
     elif (soma_reroll <=9):
@@ -59,5 +59,5 @@ while True:
         atributo_final[posicao] = 3
     else:
         atributo_final[posicao] = 4
-    
+    print(f" Rerolagem {soma_reroll}")
 print(f"Atributos finais {atributo_final}")
