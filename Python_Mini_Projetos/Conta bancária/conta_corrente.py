@@ -13,35 +13,50 @@ while True:
     try:
         opcao = int(input("Digite uma opção: "))
 
-        if(opcao > 5) or (opcao < 1):
-            print("Opção inválida! \nDigite uma das opções do menu!")
-            (input("** Pressione ENTER para voltar ao MENU **"))
+        if (opcao == 1):
+            
+            try:
+                valor = float(input("Digite o valor a ser depositado: "))
+    
+                depositar(valor)
 
-        elif (opcao == 1):
-
-            depositar()
-            (input("** Pressione ENTER para voltar ao MENU **"))
-
+                input("** Pressione ENTER para voltar ao MENU **")
+            
+            except ValueError:
+                print("Valor inválido, tente novamente!")
+                input("** Pressione ENTER para voltar ao MENU **")
 
         elif (opcao == 2):
 
-            sacar()
-            (input("** Pressione ENTER para voltar ao MENU **"))
+            try:
+                valor = float(input("Digite o valor do saque: "))
+
+                sacar(valor)
+                
+                input("** Pressione ENTER para voltar ao MENU **")
+
+            except ValueError:
+                print("Valor inválido, tente novamente!")
+                input("** Pressione ENTER para voltar ao MENU **")
 
         elif (opcao == 3):
 
             extrato_cc()
-            (input("** Pressione ENTER para voltar ao MENU **"))
+            input("** Pressione ENTER para voltar ao MENU **")
 
         elif(opcao == 4):
 
             saldo_cc()
-            (input("** Pressione ENTER para voltar ao MENU **"))
+            input("** Pressione ENTER para voltar ao MENU **")
 
-        else:
+        elif(opcao == 5):
 
             print("F i m  d o  p r o g r a m a !")
             break
+
+        else:
+            print("Opção inválida! \nDigite uma das opções do menu!")
+            input("** Pressione ENTER para voltar ao MENU **")
 
     except ValueError:
         
